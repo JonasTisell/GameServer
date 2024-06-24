@@ -109,6 +109,7 @@ public class GameServer {
 		Commands.registerCommand("mass", new Mass());
 		Commands.registerCommand("action", new Action());
 		Commands.registerCommand("summon", new Summon());
+		Commands.registerCommand("kick", new Kick());
 		PluginManager.loadPlugins("plugins");
 	}
 
