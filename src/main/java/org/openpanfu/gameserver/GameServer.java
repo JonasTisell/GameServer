@@ -87,7 +87,7 @@ public class GameServer {
 
 	public static void main(String[] arguments) throws SQLException, InterruptedException {
 		try {
-			properties.load(Files.newInputStream(Paths.get("/var/www/gameserver/GameServer.properties")));
+			properties.load(new FileInputStream("GameServer.properties"));
 		} catch (Exception e) {
 			Logger.error("There was an issue loading the properties file.");
 			e.printStackTrace();
@@ -100,7 +100,7 @@ public class GameServer {
 				gameServers.add(gameserver);
 				gameserver.updateUserCount();
 				GameServerDAO.setupKeys(gameserver);
-				Logger.info("GameServer " + gameserver.name + " is ready for connections.");
+				Logger.info("Gameserver " + gameserver.name + " is ready for connections.");
 			}
 		} else {
 			Logger.error("HALT! The database connection could not be initialized!");
