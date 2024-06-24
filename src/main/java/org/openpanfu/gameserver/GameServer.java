@@ -110,6 +110,8 @@ public class GameServer {
 		Commands.registerCommand("action", new Action());
 		Commands.registerCommand("summon", new Summon());
 		Commands.registerCommand("kick", new Kick());
+		Commands.registerCommand("alert", new AlertAll());
+		Commands.registerCommand("roomalert", new AlertRoom());
 		PluginManager.loadPlugins("plugins");
 	}
 
