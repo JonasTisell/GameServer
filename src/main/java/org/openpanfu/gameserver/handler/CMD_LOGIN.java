@@ -30,7 +30,7 @@ public class CMD_LOGIN implements IHandler {
 			sender.setUsername(data.name);
 			sender.setSheriff(data.sheriff);
 			sender.setCurrentGameServer(sender.getGameServer().getId());
-			Logger.info("User " + sender.getUsername() + " logged in!");
+			Logger.info("User " + sender.getUsername() + " logged in to " + sender.getGameServer().getName() + "!");
 			sender.getGameServer().getSessionManager().addUser(sender);
 			sender.setLoggedIn(true);
 			sender.nullTicketId();
@@ -41,9 +41,10 @@ public class CMD_LOGIN implements IHandler {
 				PanfuPacket onLoginPacket = new PanfuPacket(Packets.RES_ON_LOGIN);
 				onLoginPacket.writeString("OK");
 				sender.sendPacket(onLoginPacket);
-				sender.setX(450);
-				sender.setY(450);
-				int[] randomRooms = { 1, 2, 3, 4 };
+				sender.setX(350);
+				sender.setY(330);
+				sender.setRot(6);
+				int[] randomRooms = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 				if (startRoom > 0)
 					sender.joinRoom(startRoom);
 				else
