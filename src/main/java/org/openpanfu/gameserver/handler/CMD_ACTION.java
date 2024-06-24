@@ -159,13 +159,8 @@ public class CMD_ACTION implements IHandler {
 				packet.readString(); // Not filled by the client
 				int unknown = packet.readInt();
 				actionBroadcast.writeString("doSlideAnimation");
-				if (Integer.valueOf(GameServer.getProperties().getProperty("rooms.pool.jumpintotheshowers")) != 0) {
-					actionBroadcast.writeInt(540);
-					actionBroadcast.writeInt(390);
-				} else {
-					actionBroadcast.writeInt(ThreadLocalRandom.current().nextInt(poolX, poolX2 + 1));
-					actionBroadcast.writeInt(ThreadLocalRandom.current().nextInt(poolY, poolY2 + 1));
-				}
+				actionBroadcast.writeInt(ThreadLocalRandom.current().nextInt(poolX, poolX2 + 1));
+				actionBroadcast.writeInt(ThreadLocalRandom.current().nextInt(poolY, poolY2 + 1));
 				actionBroadcast.writeString("");
 				actionBroadcast.writeInt(unknown);
 				actionBroadcast.writeString("false");
@@ -178,13 +173,8 @@ public class CMD_ACTION implements IHandler {
 				int endPosY = packet.readInt();
 				int plankId = packet.readInt();
 				actionBroadcast.writeString("doDivingAnimation");
-				if (Integer.valueOf(GameServer.getProperties().getProperty("rooms.pool.jumpintotheshowers")) != 0) {
-					actionBroadcast.writeInt(540);
-					actionBroadcast.writeInt(390);
-				} else {
-					actionBroadcast.writeInt(endPosX);
-					actionBroadcast.writeInt(endPosY);
-				}
+				actionBroadcast.writeInt(endPosX);
+				actionBroadcast.writeInt(endPosY);
 				actionBroadcast.writeInt(plankId);
 				actionBroadcast.writeString("false");
 				sender.setLastActionPerformedTime(System.currentTimeMillis());
