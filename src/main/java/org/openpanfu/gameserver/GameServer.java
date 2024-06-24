@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.openpanfu.gameserver.commands.Commands;
-import org.openpanfu.gameserver.commands.Help;
+import org.openpanfu.gameserver.commands.*;
+
 import org.openpanfu.gameserver.database.Database;
 import org.openpanfu.gameserver.database.GameServerData;
 import org.openpanfu.gameserver.database.dao.GameServerDAO;
