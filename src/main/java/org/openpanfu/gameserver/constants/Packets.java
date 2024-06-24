@@ -55,6 +55,13 @@ public class Packets {
 
 	public static final int CMD_INFOMESSAGE = 900;
 
+	// Room games
+	public static final int CMD_GET_STATUS = 130;
+	public static final int CMD_SHOOT_BALL = 132;
+	public static final int CMD_GOAL = 133;
+	public static final int CMD_GET_TEAMS = 135;
+	public static final int CMD_JOIN_TEAM = 136;
+
 	// S->C
 	public static final int RES_ON_LOGIN = 0;
 	public static final int RES_DISCONNECT = 2;
@@ -208,6 +215,21 @@ public class Packets {
 		}
 		if (header == 120) {
 			return "CMD_SMS_ABO_RECIVE";
+		}
+		if (header == 130) {
+			return "CMD_GET_STATUS";
+		}
+		if (header == 132) {
+			return "CMD_SHOOT_BALL";
+		}
+		if (header == 133) {
+			return "CMD_GOAL";
+		}
+		if (header == 135) {
+			return "CMD_GET_TEAMS";
+		}
+		if (header == 136) {
+			return "CMD_JOIN_TEAM";
 		}
 		if (header == 200) {
 			return "CMD_INITIATE_RACE";
